@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    stages {
+        stage('git repo & clean') {
+            steps {
+               // bat "rmdir  /s /q SpringBoot-with-jpa"
+               // bat "git clone https://github.com/Maheshkmule/SpringBoot-with-jpa.git"
+                bat "mvn clean -f SpringBootJerseyRestfulWebService"
+            }
+        }
+        stage('install') {
+            steps {
+                bat "mvn install -f SpringBoot-with-jpa"
+            }
+        }
+        stage('test') {
+            steps {
+                bat "mvn test -f SpringBoot-with-jpa"
+            }
+        }
+        stage('package') {
+            steps {
+                bat "mvn package -f SpringBoot-with-jpa"
+            }
+        }
+    }
+}
