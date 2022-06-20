@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('git repo & clean') {
             steps {
-               // bat "rmdir  /s /q SpringBoot-with-jpa"
-               // bat "git clone https://github.com/Maheshkmule/SpringBoot-with-jpa.git"
-                bat "mvn clean -f SpringBootJerseyRestfulWebService"
+               bat "rmdir  /s /q SpringBoot-with-jpa"
+               bat "git clone https://github.com/Maheshkmule/SpringBoot-with-jpa.git"
+               bat "mvn clean -f SpringBootJerseyRestfulWebService"
             }
         }
         stage('install') {
