@@ -9,13 +9,13 @@ echo "Building the Code.........."
 bat "mvn clean"
 }
 }
-stage('Test') 
-{
-steps{
-echo "Testing the Code.........."
-bat "mvn test"
-}
-}
+// stage('Test') 
+// {
+// steps{
+// echo "Testing the Code.........."
+// bat "mvn test"
+// }
+// }
 stage('Compile') 
 {
 steps{
